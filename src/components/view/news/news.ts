@@ -34,8 +34,16 @@ class News {
 
         const newsContainer = getElement('.news');
         newsContainer.innerHTML = '';
-        newsContainer.appendChild(fragment);
+        newsContainer.appendChild(news.length ? fragment : this.createEmptyMessage());
         newsContainer.scrollTop = 0;
+    }
+
+    private createEmptyMessage(): HTMLParagraphElement {
+        const message: HTMLParagraphElement = document.createElement('p');
+        message.className = 'news__empty';
+        message.textContent = 'No news found for this source. Try another one.';
+
+        return message;
     }
 }
 
