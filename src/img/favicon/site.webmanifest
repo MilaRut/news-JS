@@ -1,0 +1,11 @@
+{
+    "name": "News Portal",
+    "short_name": "News",
+    "icons": [
+        { "src": "icon-192.png", "type": "image/png", "sizes": "192x192" },
+        { "src": "icon-512.png", "type": "image/png", "sizes": "512x512" }
+    ],
+    "theme_color": "#17181c",
+    "background_color": "#17181c",
+    "display": "standalone"
+}
