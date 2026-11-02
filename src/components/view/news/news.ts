@@ -15,7 +15,7 @@ class News {
             if (idx % 2) getElement('.news__item', newsClone).classList.add('alt');
 
             getElement('.news__meta-photo', newsClone).style.backgroundImage = `url(${
-                item.urlToImage || 'img/news_placeholder.jpg'
+                item.urlToImage || 'img/news_placeholder.webp'
             })`;
             getElement('.news__meta-author', newsClone).textContent = item.author || item.source.name;
             getElement('.news__meta-date', newsClone).textContent = item.publishedAt
@@ -35,6 +35,7 @@ class News {
         const newsContainer = getElement('.news');
         newsContainer.innerHTML = '';
         newsContainer.appendChild(fragment);
+        newsContainer.scrollTop = 0;
     }
 }
 
