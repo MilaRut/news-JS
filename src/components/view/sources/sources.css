@@ -32,6 +32,16 @@
     transform: translateY(-0.25em);
 }
 
+.source__item--active,
+.source__item--active:hover,
+.source__item--active:focus {
+    border-color: #3fcc59;
+    color: #17181c;
+    background: #3fcc59;
+    box-shadow: none;
+    transform: none;
+}
+
 .source__item-name {
     font-weight: 400;
     white-space: nowrap;
@@ -55,6 +65,12 @@
     .source__item:hover,
     .source__item:focus {
         transform: translateX(0.25em);
+    }
+
+    .source__item--active,
+    .source__item--active:hover,
+    .source__item--active:focus {
+        transform: none;
     }
 
     .source__item-name {

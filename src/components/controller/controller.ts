@@ -11,7 +11,7 @@ class AppController extends AppLoader {
         );
     }
 
-    public getNews(e: Event, callback: Callback<NewsResponse>): void {
+    public getNews(e: Event, callback: Callback<NewsResponse>, onSelect?: Callback<string>): void {
         const newsContainer: EventTarget | null = e.currentTarget;
         if (!(newsContainer instanceof HTMLElement)) return;
 
@@ -22,6 +22,7 @@ class AppController extends AppLoader {
                 const sourceId: string | null = target.getAttribute('data-source-id');
                 if (sourceId && newsContainer.getAttribute('data-source') !== sourceId) {
                     newsContainer.setAttribute('data-source', sourceId);
+                    onSelect?.(sourceId);
                     super.getResp<NewsResponse>(
                         {
                             endpoint: Endpoint.Everything,

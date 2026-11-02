@@ -14,7 +14,11 @@ class App {
 
     public start(): void {
         getElement('.sources').addEventListener('click', (e: MouseEvent) =>
-            this.controller.getNews(e, (data: NewsResponse) => this.view.drawNews(data))
+            this.controller.getNews(
+                e,
+                (data: NewsResponse) => this.view.drawNews(data),
+                (sourceId: string) => this.view.setActiveSource(sourceId)
+            )
         );
         this.controller.getSources((data: SourcesResponse) => this.view.drawSources(data));
     }

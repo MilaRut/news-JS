@@ -18,6 +18,14 @@ class Sources {
 
         getElement('.sources').append(fragment);
     }
+
+    public setActive(sourceId: string): void {
+        getElement('.sources')
+            .querySelectorAll<HTMLElement>('.source__item')
+            .forEach((item) => {
+                item.classList.toggle('source__item--active', item.getAttribute('data-source-id') === sourceId);
+            });
+    }
 }
 
 export default Sources;
