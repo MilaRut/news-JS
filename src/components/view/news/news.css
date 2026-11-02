@@ -1,3 +1,11 @@
+.news {
+    flex-grow: 1;
+    min-height: 0;
+    min-width: 0;
+    padding: 0 12px;
+    overflow-y: auto;
+}
+
 .news__item {
     display: flex;
     flex-direction: column;
@@ -60,9 +68,10 @@
 }
 
 .news__item .news__description h2 {
-    line-height: 1;
+    line-height: 1.1;
     margin: 0;
-    font-size: 1.7rem;
+    font-size: 1.3rem;
+    overflow-wrap: anywhere;
 }
 
 .news__item .news__description h3 {
@@ -122,9 +131,17 @@
 }
 
 @media (min-width: 640px) {
+    .news {
+        padding: 0 24px;
+    }
+
     .news__item {
         flex-direction: row;
         max-width: 700px;
+    }
+
+    .news__item .news__description h2 {
+        font-size: 1.7rem;
     }
 
     .news__item .news__meta {
