@@ -1,3 +1,29 @@
+export enum Endpoint {
+    Sources = 'sources',
+    Everything = 'everything',
+}
+
+export enum StatusCode {
+    Unauthorized = 401,
+    NotFound = 404,
+}
+
+export type HttpMethod = 'GET' | 'POST' | 'PUT' | 'DELETE';
+
+export interface QueryOptions {
+    apiKey: string;
+    sources: string;
+}
+
+export type RequestOptions = Partial<QueryOptions>;
+
+export interface RequestParams {
+    endpoint: Endpoint;
+    options?: RequestOptions;
+}
+
+export type Callback<T> = (data: T) => void;
+
 export type ResponseStatus = 'ok' | 'error';
 
 export interface Source {
